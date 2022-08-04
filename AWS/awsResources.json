@@ -55,7 +55,19 @@
         "Resources":[
             {
                 "Resource Name": "S3 Bucket",
-                "Resource Description" : "Provides a S3 bucket resource"
+                "Resource Description" : "Provides a S3 bucket resource."
+            }
+        ]
+    },
+    {
+        "Cloud Platform": "AWS",
+        "Service Type": "Storage Service",
+        "Service": "S3",
+        "Service Description": "scalable Storage in the Cloud",
+        "Resources": [
+            {
+                "Resource Name": "S3 Acces Point",
+                "Resource Description": "Provides a resource to manage an S3 Access Point."
             }
         ]
     }
