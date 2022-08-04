@@ -1,0 +1,62 @@
+[
+    {
+        "Cloud Platform": "AWS",
+        "Service Type" : "Compute Service",
+        "Service" : "EC2",
+        "Service Description": "Virtual servers in cloud",
+        "Resources": [
+            {
+                "Resource Name":"Instance",
+                "Resource Description": "Provides an EC2 instance resource. This allows instances to be created, updated, and deleted. Instances also support provisioning."
+            },
+            {
+                "Resource Name": "Security Groups",
+                "Resource Description": "Provides a security group resource."
+            },
+            {
+                "Resource Name": "Key Pairs",
+                "Resource Description": "Provides an EC2 key pair resource. A key pair is used to control login access to EC2 instances."
+            }
+        ]
+    },
+    {
+        "Cloud Platform": "AWS",
+        "Service Type": "Compute Service",
+        "Service": "Elastic BeanStalk",
+        "Service Description": "run and manage a web app",
+        "Resources": [
+            {
+                "Resource Name": "Elastic Beanstalk Environment",
+                "Resource Description": "Provides an Elastic Beanstalk Environment Resource. Elastic Beanstalk allows you to deploy and manage applications in the AWS cloud without worrying about the infrastructure that runs those applications."
+            },
+            {
+                "Resource Name": "Elastic Beanstalk Application",
+                "Resource Description": "Provides an Elastic Beanstalk Application Resource. Elastic Beanstalk allows you to deploy and manage applications in the AWS cloud without worrying about the infrastructure that runs those applications."
+            }
+        ]
+    },
+    {
+        "Cloud Platform": "AWS",
+        "Service Type": "Compute Service",
+        "Service": "Lambda Function",
+        "Service Description": "run codes without thinkinng about servers",
+        "Resources": [
+            {
+                "Resource Name": "Lambda Function",
+                "Resource Description": "Provides a Lambda Function resource. Lambda allows you to trigger execution of code in response to events in AWS, enabling serverless backend solutions. The Lambda Function itself includes source code and runtime configuration."
+            }
+        ]
+    },
+    {
+        "Cloud Platform": "AWS",
+        "Service Type": "Storage Service",
+        "Service": "S3",
+        "Service Description": "scalable Storage in the Cloud",
+        "Resources":[
+            {
+                "Resource Name": "S3 Bucket",
+                "Resource Description" : "Provides a S3 bucket resource"
+            }
+        ]
+    }
+]
