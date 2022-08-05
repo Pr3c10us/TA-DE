@@ -1,73 +1,241 @@
 [
     {
         "Cloud Platform": "AWS",
-        "Service Type" : "Compute Service",
-        "Service" : "EC2",
-        "Service Description": "Virtual servers in cloud",
-        "Resources": [
-            {
-                "Resource Name":"Instance",
-                "Resource Description": "Provides an EC2 instance resource. This allows instances to be created, updated, and deleted. Instances also support provisioning."
-            },
-            {
-                "Resource Name": "Security Groups",
-                "Resource Description": "Provides a security group resource."
-            },
-            {
-                "Resource Name": "Key Pairs",
-                "Resource Description": "Provides an EC2 key pair resource. A key pair is used to control login access to EC2 instances."
-            }
-        ]
-    },
-    {
-        "Cloud Platform": "AWS",
         "Service Type": "Compute Service",
-        "Service": "Elastic BeanStalk",
-        "Service Description": "run and manage a web app",
-        "Resources": [
+        "Services": [
             {
-                "Resource Name": "Elastic Beanstalk Environment",
-                "Resource Description": "Provides an Elastic Beanstalk Environment Resource. Elastic Beanstalk allows you to deploy and manage applications in the AWS cloud without worrying about the infrastructure that runs those applications."
+                "Service Name": "EC2",
+                "Service Description": "Virtual servers in cloud",
+                "Resources": [
+                    {
+                        "Resource Name": "Instance",
+                        "Resource Description": "Provides an EC2 instance resource. This allows instances to be created, updated, and deleted. Instances also support provisioning."
+                    },
+                    {
+                        "Resource Name": "Security Groups",
+                        "Resource Description": "Provides a security group resource."
+                    },
+                    {
+                        "Resource Name": "Key Pairs",
+                        "Resource Description": "Provides an EC2 key pair resource. A key pair is used to control login access to EC2 instances."
+                    }
+                ]
             },
             {
-                "Resource Name": "Elastic Beanstalk Application",
-                "Resource Description": "Provides an Elastic Beanstalk Application Resource. Elastic Beanstalk allows you to deploy and manage applications in the AWS cloud without worrying about the infrastructure that runs those applications."
-            }
-        ]
-    },
-    {
-        "Cloud Platform": "AWS",
-        "Service Type": "Compute Service",
-        "Service": "Lambda Function",
-        "Service Description": "run codes without thinkinng about servers",
-        "Resources": [
+                "Service Name": "Elastic BeanStalk",
+                "Service Description": "run and manage a web app",
+                "Resources": [
+                    {
+                        "Resource Name": "Elastic Beanstalk Environment",
+                        "Resource Description": "Provides an Elastic Beanstalk Environment Resource. Elastic Beanstalk allows you to deploy and manage applications in the AWS cloud without worrying about the infrastructure that runs those applications."
+                    },
+                    {
+                        "Resource Name": "Elastic Beanstalk Application",
+                        "Resource Description": "Provides an Elastic Beanstalk Application Resource. Elastic Beanstalk allows you to deploy and manage applications in the AWS cloud without worrying about the infrastructure that runs those applications."
+                    }
+                ]
+            },
             {
-                "Resource Name": "Lambda Function",
-                "Resource Description": "Provides a Lambda Function resource. Lambda allows you to trigger execution of code in response to events in AWS, enabling serverless backend solutions. The Lambda Function itself includes source code and runtime configuration."
+                "Service Name": "Lambda Function",
+                "Service Description": "run codes without thinkinng about servers",
+                "Resources": [
+                    {
+                        "Resource Name": "Lambda Function",
+                        "Resource Description": "Provides a Lambda Function resource. Lambda allows you to trigger execution of code in response to events in AWS, enabling serverless backend solutions. The Lambda Function itself includes source code and runtime configuration."
+                    }
+                ]
             }
         ]
     },
     {
         "Cloud Platform": "AWS",
         "Service Type": "Storage Service",
-        "Service": "S3",
-        "Service Description": "scalable Storage in the Cloud",
-        "Resources":[
+        "Services": [
             {
-                "Resource Name": "S3 Bucket",
-                "Resource Description" : "Provides a S3 bucket resource."
+                "Service Name": "S3",
+                "Service Description": "scalable Storage in the Cloud",
+                "Resources": [
+                    {
+                        "Resource Name": "S3 Bucket",
+                        "Resource Description": "Provides a S3 bucket resource."
+                    },
+                    {
+                        "Resource Name": "S3 Control",
+                        "Resource Description": "Provides a resource to manage an S3 Access Point."
+                    }
+                ]
+            },
+            {
+                "Service Name": "S3 Glacier",
+                "Service Description": "scalable Storage in the Cloud",
+                "Resources": [
+                    {
+                        "Resource Name": "Aws Glacier Vault ",
+                        "Resource Description": "Provides a Glacier Vault Resource"
+                    },
+                    {
+                        "Resource Name": "Aws Glacier Vault Lock",
+                        "Resource Description": "Manages a Glacier Vault Lock. You can refer to the Glacier Developer Guide for a full explanation of the Glacier Vault Lock functionality."
+                    }
+                ]   
+            },
+            {
+                "Service Name": "EFS",
+                "Service Description": "Managed file storage for EC2",
+                "Resources": [
+                    {
+                        "Resource Name": "Elastic File System ",
+                        "Resource Description": "Provides an Elastic File System (EFS) File System resource."
+                    },
+                    {
+                        "Resource Name": "Elastic File System access point",
+                        "Resource Description": "Provides an Elastic File System (EFS) access point."
+                    }
+                ]
             }
         ]
     },
     {
         "Cloud Platform": "AWS",
-        "Service Type": "Storage Service",
-        "Service": "S3",
-        "Service Description": "scalable Storage in the Cloud",
-        "Resources": [
+        "Service Type": "Network Service",
+        "Services": [
             {
-                "Resource Name": "S3 Acces Point",
-                "Resource Description": "Provides a resource to manage an S3 Access Point."
+                "Service Name": "VPC",
+                "Service Description": "Isolated Cloud Resources",
+                "Resources": [
+                    {
+                        "Resource Name": "AWS Virtual private cloud",
+                        "Resource Description": "Provides a VPC resource."
+                    },
+                    {
+                        "Resource Name": "AWS Subnet",
+                        "Resource Description": "Provides an VPC subnet resource."
+                    },
+                    {
+                        "Resource Name": "AWS Route Table",
+                        "Resource Description": "Provides a resource to create a VPC routing table."
+                    },
+                    {
+                        "Resource Name": "AWS Route Table Association",
+                        "Resource Description": "Provides a resource to create an association between a route table and a subnet or a route table and an internet gateway or virtual private gateway."
+                    },
+                    {
+                        "Resource Name": "AWS Internet Gateway",
+                        "Resource Description": "Provides a resource to create a VPC Internet Gateway."
+                    },
+                    {
+                        "Resource Name": "AWS Egress-only internet gateways",
+                        "Resource Description": "[IPv6 only] Creates an egress-only Internet gateway for your VPC. An egress-only Internet gateway is used to enable outbound communication over IPv6 from instances in your VPC to the Internet, and prevents hosts outside of your VPC from initiating an IPv6 connection with your instance."
+                    },
+                    {
+                        "Resource Name": "AWS Nat Gateway",
+                        "Resource Description": "Provides a resource to create a VPC NAT Gateway."
+                    }
+                ]
+            },
+            {
+                "Service Name": "Cloudfront",
+                "Service Description": "Global Content Delivery Network",
+                "Resources": [
+                    {
+                        "Resource Name": "AWS Cloudfront Distribution",
+                        "Resource Description": "Creates an Amazon CloudFront web distribution."
+                    }
+                ]
+            },
+            {
+               "Service Name": "Route53",
+                "Service Description": "Scalable DNS and Domain Name Registration",
+                "Resources": [
+                    {
+                        "Resource Name": "AWS Route53 record",
+                        "Resource Description": "Provides a Route53 record resource."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Cloud Platform": "AWS",
+        "Service Type": "Database Service",
+        "Services": [
+            {
+                "Service Name": "RDS",
+                "Service Description": "Managed Relational Database Service",
+                "Resources": [
+                    {
+                        "Resource Name": "AWS Db Instance",
+                        "Resource Description": "Provides an RDS instance resource. A DB instance is an isolated database environment in the cloud. A DB instance can contain multiple user-created databases."
+                    },
+                    {
+                        "Resource Name": "AWS RDS cluster Instance",
+                        "Resource Description": "Provides an RDS Cluster Instance Resource. A Cluster Instance Resource defines attributes that are specific to a single instance in a RDS Cluster, specifically running Amazon Aurora."
+                    }
+                ]
+            },
+            {
+                "Service Name": "DynamoDB",
+                "Service Description": "Managed NoSQL Database",
+                "Resources": [
+                    {
+                        "Resource Name": "AWS DynamoDB Table",
+                        "Resource Description": "Provides a DynamoDB table resource."
+                    }
+                ]
+            },
+            {
+                "Service Name": "Amazon DocumentDb",
+                "Service Description": "Fully-managed MongoDB-compatible database service",
+                "Resources": [
+                    {
+                        "Resource Name": "AWS DocDB Cluster",
+                        "Resource Description": "Manages a DocDB Cluster."
+                    },
+                    {
+                        "Resource Name": "AWS DocDB Cluster Instance",
+                        "Resource Description": "Provides an DocDB Cluster Resource Instance. A Cluster Instance Resource defines attributes that are specific to a single instance in a DocDB Cluster."
+                    }
+                ]
+            }
+        ]
+    },  
+    {
+        "Cloud Platform": "AWS",
+        "Service Type": "Container Service",
+        "Services": [
+            {
+                "Service Name": "Elastic Container Registry",
+                "Service Description": "Fully-managed Docker container registry : Share and deploy container software, publicly or privately",
+                "Resources": [
+                    {
+                        "Resource Name": "AWS ECR Repository",
+                        "Resource Description": "Provides an Elastic Container Registry Repository."
+                    }
+                ]
+            },
+            {
+                "Service Name": "Elastic Container Service",
+                "Service Description": "Highly secure, reliable, and scalable way to run containers",
+                "Resources": [
+                    {
+                        "Resource Name": "AWS ECS Service",
+                        "Resource Description": "Provides an ECS service - effectively a task that is expected to run until an error occurs or a user terminates it (typically a webserver or a database)."
+                    },
+                    {
+                        "Resource Name": "AWS ECS cluster",
+                        "Resource Description": "Provides an ECS cluster."
+                    }
+                ]
+            },
+            {
+                "Service Name": "Elastic Kubernetes Service",
+                "Service Description": "The most trusted way to start, run, and scale Kubernetes",
+                "Resources": [
+                    {
+                        "Resource Name": "AWS EKS",
+                        "Resource Description": "Terraform module to create an Elastic Kubernetes (EKS) cluster and associated resources 🇺🇦"
+                    }
+                ]
             }
         ]
     }
