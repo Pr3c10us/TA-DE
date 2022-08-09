@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
-    'Cloud Platform': {
+    CloudPlatform: {
         type: String,
         enum: {
             values: ['AWS', 'GCP', 'Azure'],
         },
     },
-    'Service Type': {
+    ServiceType: {
         type: String,
     },
     Services: {
@@ -15,6 +15,29 @@ const schema = new mongoose.Schema({
     },
 });
 
-const awsModel = mongoose.model('awsModel', schema);
+const schema2 = new mongoose.Schema({
+    ServiceName: {
+        type: String,
+    },
+    ShortName: {
+        type: String,
+        required: true,
+    },
+    ServiceDescription: {
+        type: String,
+    },
+    Resources: {
+        type: Array,
+    },
+});
 
-module.exports = awsModel;
+const awsService = mongoose.model('awsService', schema);
+const awsResources = mongoose.model(
+    'awsResources',
+    schema2
+);
+
+module.exports = {
+    awsResources,
+    awsService,
+};
