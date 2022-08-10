@@ -1,35 +1,11 @@
 const { awsService } = require('../../model/awsModel');
 
-const getAllData = async (req, res) => {
-    try {
-        const allData = await awsService
-            .find({})
-            .sort('Cloudplatform');
-        res.status(200).json({
-            nbHits: allData.length,
-            allData,
-        });
-    } catch (error) {
-        res.status(500).send(
-            'Some internal issues, no vex'
-        );
-        console.log(error);
-    }
-};
-const checkCloudPlatform = (cp) => {
-    if (cp != 'AWS' && cp != 'AZURE' && cp != 'GCP') {
-        return res
-            .status(404)
-            .send(
-                `e do not provide services for such platform😩`
-            );
-    }
-};
+// get all service types
 const getAllServiceTypes = async (req, res) => {
     try {
         let { cloudPlatform } = req.params;
         let cp = cloudPlatform.toUpperCase();
-        checkCloudPlatform(cp);
+
         let serviceTypes = await awsService
             .find({
                 CloudPlatform: cp,
@@ -51,28 +27,34 @@ const getAllServiceTypes = async (req, res) => {
     }
 };
 
+// create a new service type
 const createServiceType = async (req, res) => {
     try {
         let newServiceType = req.body;
+
         let { cloudPlatform } = req.params;
         let cp = cloudPlatform.toUpperCase();
-        checkCloudPlatform(cp);
+
         if (!newServiceType.ServiceType) {
             return res.status(406).json({
                 msg: 'ServiceType must be provided',
             });
         }
+
         if (newServiceType.Services) {
             return res.status(406).json({
                 msg: 'Do not provide Services',
             });
         }
+
         let newST = {
             CloudPlatform: cp,
             ServiceType: newServiceType.ServiceType,
             Services: newServiceType.Services,
         };
+
         await awsService.create(newST);
+
         res.status(200).json({
             msg: 'Created',
             'new data created': newST,
@@ -86,7 +68,6 @@ const createServiceType = async (req, res) => {
 };
 
 module.exports = {
-    getAllData,
     getAllServiceTypes,
     createServiceType,
 };
