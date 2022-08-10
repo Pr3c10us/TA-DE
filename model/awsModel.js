@@ -9,6 +9,7 @@ const schema = new mongoose.Schema({
     },
     ServiceType: {
         type: String,
+        required: true,
     },
     Services: {
         type: Array,
@@ -37,6 +38,7 @@ const awsResources = mongoose.model(
     schema2
 );
 
+// console.log(awsService.find({}));
 module.exports = {
     awsResources,
     awsService,

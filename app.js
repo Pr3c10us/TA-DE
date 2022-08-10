@@ -3,7 +3,7 @@ const app = express();
 const connectdb = require('./Database/connectDb');
 require('dotenv').config();
 const port = process.env.PORT || 8000;
-const awsRouter = require('./router/router')
+const awsRouter = require('./router/awsRouter')
 
 // MiddleWre
 app.use(express.json());

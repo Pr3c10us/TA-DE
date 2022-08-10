@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-const connectdb = require('../Database/connectDb');
+const connectdb = require('./Database/connectDb');
 const aws = require('./data/aws.json');
 const awsRes = require('./data/awsResources.json');
 const {
@@ -17,7 +17,7 @@ const letsConnect = async () => {
         await awsResources.deleteMany();
         await awsResources.create(awsRes);
         console.log('connected and updated');
-        // process.exit(1)
+        process.exit(1)
     } catch (error) {
         console.log(error);
         process.exit(1);
