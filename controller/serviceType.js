@@ -1,4 +1,4 @@
-const { awsService } = require('../../model/awsModel');
+const { awsService } = require('../model/awsModel');
 
 // get all service types
 const getAllServiceTypes = async (req, res) => {

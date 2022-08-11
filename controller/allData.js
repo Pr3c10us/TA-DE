@@ -1,4 +1,4 @@
-const { awsService } = require('../../model/awsModel');
+const { awsService } = require('../model/awsModel');
 
 const getAllData = async (req, res) => {
     try {
