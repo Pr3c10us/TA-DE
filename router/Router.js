@@ -1,5 +1,4 @@
 const express = require('express');
-const app = express();
 const router = express.Router();
 const { awsService } = require('../model/awsModel');
 
@@ -8,7 +7,7 @@ const getAllData = require('../controller/allData');
 
 router.route('/').get(getAllData);
 
-// get service types
+// get and manipulate service types
 const {
     getAllServiceTypes,
     createServiceType,
@@ -23,7 +22,7 @@ router
     .delete(deleteAServiceType)
     .patch(editAServiceType);
 
-// get services in a service type
+// get all services in a service type and manipulate them
 const getAServiceType = require('../controller/allServiceInserviceType');
 
 router

@@ -39,7 +39,7 @@
             },
             {
                 "ServiceName": "LambdaFunction",
-                "ShortName": "Lambda",
+                "ShortName": "LAMBDA",
                 "ServiceDescription": "run codes without thinkinng about servers",
                 "Resources": [
                     {
@@ -142,7 +142,7 @@
             },
             {
                 "ServiceName": "Cloudfront",
-                "ShortName": "Cloudfront",
+                "ShortName": "CLOUDFRONT",
                 "ServiceDescription": "Global Content Delivery Network",
                 "Resources": [
                     {
@@ -153,7 +153,7 @@
             },
             {
                 "ServiceName": "Route53",
-                "ShortName": "Route53",
+                "ShortName": "ROUTE53",
                 "ServiceDescription": "Scalable DNS and Domain Name Registration",
                 "Resources": [
                     {
@@ -185,7 +185,7 @@
             },
             {
                 "ServiceName": "DynamoDB",
-                "ShortName": "DynamoDB",
+                "ShortName": "DYNAMODB",
                 "ServiceDescription": "Managed NoSQL Database",
                 "Resources": [
                     {
@@ -196,7 +196,7 @@
             },
             {
                 "ServiceName": "AmazonDocumentDb",
-                "ShortName": "DocDB",
+                "ShortName": "DOCDB",
                 "ServiceDescription": "Fully-managed MongoDB-compatible database service",
                 "Resources": [
                     {

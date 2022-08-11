@@ -15,7 +15,7 @@ const checkServiceType = async (req, res, next) => {
                 return services.ServiceType;
             }
         );
-        console.log(serviceType);
+
         if (
             allserviceType.includes(
                 `${serviceType} Service`

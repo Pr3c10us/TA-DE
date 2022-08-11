@@ -68,6 +68,7 @@ const createServiceType = async (req, res) => {
     }
 };
 
+// delete a service type
 const deleteAServiceType = async (req, res) => {
     try {
         let id = req.body.id;
@@ -93,6 +94,7 @@ const deleteAServiceType = async (req, res) => {
     }
 };
 
+// edit a service type
 const editAServiceType = async (req, res) => {
     try {
         let id = req.body.id;
