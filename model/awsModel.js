@@ -4,7 +4,7 @@ const schema = new mongoose.Schema({
     CloudPlatform: {
         type: String,
         enum: {
-            values: ['AWS', 'GCP', 'Azure'],
+            values: ['AWS', 'GCP', 'AZURE'],
         },
     },
     ServiceType: {

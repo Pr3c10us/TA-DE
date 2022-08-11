@@ -10,6 +10,8 @@ app.use(express.json());
 const checkCloudPlatform = require('./middleware/checkCloudPlatform');
 app.use('/api/v1/:cloudPlatform', checkCloudPlatform);
 
+const checkServiceType = require('./middleware/checkServiceType');
+app.use('/api/v1/:cloudPlatform/:serviceType', checkServiceType);
 // router
 const awsRouter = require('./router/Router');
 app.use('/api/v1/', awsRouter);

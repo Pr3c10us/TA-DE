@@ -17,7 +17,7 @@ const letsConnect = async () => {
         await awsResources.deleteMany();
         await awsResources.create(awsRes);
         console.log('connected and updated');
-        process.exit(1)
+        process.exit(1);
     } catch (error) {
         console.log(error);
         process.exit(1);
